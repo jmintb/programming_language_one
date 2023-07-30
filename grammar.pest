@@ -1,0 +1,7 @@
+char = {
+    !("\"" | "\\") ~ ANY
+}
+
+inner = @{ char* }
+
+string = { "\""	~ inner ~ "\"" }
