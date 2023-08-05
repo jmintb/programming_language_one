@@ -1,7 +1,13 @@
 char = {
-    !("\"" | "\\") ~ ANY
+    !("\"" | "\\" ) ~ ANY
 }
 
 inner = @{ char* }
 
 string = { "\""	~ inner ~ "\"" }
+
+val = _{ string }
+
+id = { ASCII_ALPHA*  }
+
+call = { id ~  "(" ~ val  ~ ")"}

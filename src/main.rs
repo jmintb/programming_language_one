@@ -6,9 +6,9 @@ use pest_derive::Parser;
 pub struct LangParser;
 
 fn main() {
-    let input = "\"hello world\"".to_string();
+    let input = "print(\"hello world\")".to_string();
 
-    let parsed_input = LangParser::parse(Rule::string, &input).unwrap();
+    let parsed_input = LangParser::parse(Rule::call, &input).unwrap();
 
-    println!("{parsed_input:?}");
+    println!("{parsed_input:#?}");
 }
